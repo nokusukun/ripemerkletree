@@ -47,5 +47,8 @@
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "webpack": "^1.13.0"
+  },
+  "dependencies": {
+    "ripemd160": "^2.0.2"
   }
 }

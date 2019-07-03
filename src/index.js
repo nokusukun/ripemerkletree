@@ -5,20 +5,18 @@ import {
   right,
   leaves as getLeaves,
 } from './binary-tree.js'
-import { createHash } from 'crypto'
+var RIPEMD160 = require('ripemd160')
 
 const toBuffer = (value) => {
   if (Buffer.isBuffer(value)) return value
   return new Buffer(value)
 }
 
-const combine = (hashAlgorithm = 'sha256', encoding = 'hex') => (leftData, rightData) => {
-  const hash = createHash(hashAlgorithm)
-  const input = Buffer.concat([
-    toBuffer(leftData),
-    toBuffer(rightData),
-  ])
-  return hash.update(input).digest(encoding)
+const combine = (encoding = 'hex') => (leftData, rightData) => {
+  //const hash = createHash(hashAlgorithm)
+  const hash = new RIPEMD160()
+  const input = `${leftData}${rightData}`
+  return hash.update(input).digest('hex')
 }
 
 export const computeTree = (combineFn) => (leaves) => {
@@ -48,13 +46,13 @@ export const proof = (tree) => (leafData) => {
 }
 
 export const verifyProof = (leaf, expectedMerkleRoot, proofArr = [], {
-  hashAlgorithm, encoding,
+  encoding,
 } = {}) => {
   if (!proofArr.length) {
     if (leaf === expectedMerkleRoot) return true
     return false
   }
-  const combineFn = combine(hashAlgorithm, encoding)
+  const combineFn = combine(encoding)
 
   // the merkle root should be the parent of the last part
   const actualMerkleRoot = proofArr[proofArr.length - 1].parent
@@ -82,10 +80,9 @@ export const verifyProof = (leaf, expectedMerkleRoot, proofArr = [], {
 }
 
 export default (leaves, {
-  hashAlgorithm,
   encoding,
 } = {}) => {
-  const combineFn = combine(hashAlgorithm, encoding)
+  const combineFn = combine(encoding)
   const tree = computeTree(combineFn)(leaves)
 
   return {
