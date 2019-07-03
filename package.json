@@ -1,6 +1,6 @@
 {
   "name": "merklefruit",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "Merkle Tree data structure in Javascript modified to utilize RIPEMD160",
   "main": "lib/index.js",
   "scripts": {
@@ -16,9 +16,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/blockai/merkletree.git"
+    "url": "git://github.com/nokusukun/ripemerkletree"
   },
-  "homepage": "https://github.com/blockai/merkletree",
+  "homepage": "https://github.com/nokusukun/ripemerkletree",
   "keywords": [
     "merkle",
     "ripemd160",
@@ -26,9 +26,9 @@
     "binary tree"
   ],
   "bugs": {
-    "url": "https://github.com/blockai/merkletree/issues"
+    "url": "https://github.com/nokusukun/ripemerkletree/issues"
   },
-  "author": "Olivier Lalonde <olalonde@gmail.com>",
+  "author": "Artemis Shketovsky",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.7.7",
