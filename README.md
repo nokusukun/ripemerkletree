@@ -1,7 +1,4 @@
-# merlketree
-
-[![Build Status](https://travis-ci.org/blockai/merkletree.svg?branch=master)](https://travis-ci.org/blockai/merkletree)
-
+# merklefruit
 
 Merkle tree data structure in pure Javascript. Always builds complete
 binary trees. ***Modified to use RIPEMD160***.

@@ -1,7 +1,7 @@
 {
   "name": "merklefruit",
-  "version": "1.6.0",
-  "description": "Merkle Tree data structure in Javascript",
+  "version": "1.6.2",
+  "description": "Merkle Tree data structure in Javascript modified to utilize RIPEMD160",
   "main": "lib/index.js",
   "scripts": {
     "pretest": "npm run lint",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/blockai/merkletree",
   "keywords": [
     "merkle",
+    "ripemd160",
     "merkle tree",
     "binary tree"
   ],
