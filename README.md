@@ -2,8 +2,9 @@
 
 [![Build Status](https://travis-ci.org/blockai/merkletree.svg?branch=master)](https://travis-ci.org/blockai/merkletree)
 
+
 Merkle tree data structure in pure Javascript. Always builds complete
-binary trees.
+binary trees. ***Modified to use RIPEMD160***.
 
 The proofs are compatible with the
 [chainpoint proof format](https://github.com/chainpoint/whitepaper/raw/master/chainpoint_white_paper.pdf).
@@ -13,13 +14,13 @@ The proofs are compatible with the
 ## Install
 
 ```
-npm install --save merkletree
+npm install --save merklefruit
 ```
 
 ## Usage
 
 ```javascript
-import merkletree, { verifyProof } from 'merkletree'
+import merkletree, { verifyProof } from 'merklefruit'
 
 /* with require:
 const mtree = require('merkletree')
@@ -65,7 +66,3 @@ console.log(verified)
 true
 */
 ```
-
-## TOTO
-
-- memoize hash() calls in tree to speed up branch/root computation
